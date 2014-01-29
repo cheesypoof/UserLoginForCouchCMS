@@ -1,7 +1,11 @@
 <?php
 
-// User Login for CouchCMS
-// Add this to the end of your config.php file
+/*
+ * User Login for CouchCMS (https://github.com/cheesypoof/UserLoginForCouchCMS)
+ * Copyright (c) 2014 Increment Web Services (http://incrementwebservices.com/)
+ * Released under the MIT License (https://github.com/cheesypoof/UserLoginForCouchCMS/blob/master/LICENSE)
+ */
+
 if ( !defined( 'K_ADMIN' ) ) {
 	require_once( K_COUCH_DIR . '/addons/password-compatibility.php' );
 
