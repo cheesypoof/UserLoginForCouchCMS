@@ -35,7 +35,7 @@
 								<cms:embed 'user-login.php'/>
 							</cms:if>
 
-							<cms:redirect k_site_link/>
+							<cms:redirect "<cms:link 'account.php'/>"/>
 						</cms:if>
 					</cms:if>
 				</cms:if>
