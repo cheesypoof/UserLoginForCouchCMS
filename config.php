@@ -13,11 +13,11 @@ if ( !defined( 'K_ADMIN' ) ) {
 	// Leave this alone
 	define( 'USER_PASSWORD_HASH_COST_FACTOR', '10' );
 
-	// Life of the remember cookie
+	// Life of remember cookies
 	// 2 weeks in seconds
 	define( 'USER_REMEMBER_COOKIE_EXPIRE', 1209600 );
 
-	// Enter a random value to make your remember cookie more secure
+	// Enter a random value to make your remember cookies more secure
 	// Changing this invalidates all remember cookies
 	define( 'USER_REMEMBER_COOKIE_SECRET_KEY', '3]UbHj!Q=E?cNN}B(@P,&x(t' );
 
