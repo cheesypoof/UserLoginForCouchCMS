@@ -7,7 +7,7 @@
 - Log In
 - Remember Me (Stay Logged In)
 - Log Out
-- Reset Password/Forgot Password
+- Reset/Forgot Password
 - User Profiles
 - User Listing
 - Account Settings
@@ -22,7 +22,7 @@
 
 
 ## Installation
-- In your `couch/addons/kfunctions.php` file, make sure the **session** and **DataBound** tags are enabled like so:
+- Make sure the **session** and **DataBound** tags are enabled in your `couch/addons/kfunctions.php` file:
 
 ```PHP
 require_once( K_COUCH_DIR . 'addons/cart/session.php' );
