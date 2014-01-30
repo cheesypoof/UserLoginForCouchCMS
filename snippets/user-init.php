@@ -40,6 +40,8 @@ if ( defined( 'AUTHENTICATE' ) ) {
 
 					<cms:embed 'user-init-login.php'/>
 
+					<cms:embed 'user-init-set.php'/>
+
 					<cms:set authenticated='1' scope='global'/>
 				<cms:else/>
 					<cms:delete_cookie 'remember'/>
