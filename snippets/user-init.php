@@ -28,7 +28,7 @@ if ( defined( 'AUTHENTICATE' ) ) {
 
 			<cms:delete_cookie 'remember'/>
 
-			<cms:delete_session name='user_id'/>
+			<cms:delete_session 'user_id'/>
 		</cms:no_results>
 	</cms:pages>
 <cms:else/>

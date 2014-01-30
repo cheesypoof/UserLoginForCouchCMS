@@ -8,6 +8,6 @@
 
 <cms:delete_cookie 'remember'/>
 
-<cms:delete_session name='user_id'/>
+<cms:delete_session 'user_id'/>
 
 <cms:redirect "<cms:link 'login.php'/>"/>

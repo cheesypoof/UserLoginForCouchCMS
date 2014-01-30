@@ -156,7 +156,7 @@
 			<cms:show activation_fail_msg/>
 		</cms:if>
 	<cms:else/>
-		<cms:redirect url=k_site_link/>
+		<cms:redirect k_site_link/>
 	</cms:if>
 </cms:if>
 
