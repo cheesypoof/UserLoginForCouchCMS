@@ -18,24 +18,24 @@
 
 		<cms:set reset_fail_msg='<div class="alert alert-error">Password reset failed. Please check the URL for typos and contact us if this error persists.</div>'/>
 
-		<cms:if valid_id>
+		<cms:if "<cms:not valid_id/>">
+			<cms:show reset_fail_msg/>
+		<cms:else/>
 			<cms:pages id=get_id limit='1' masterpage='users.php'>
-				<cms:if get_hash == user_pw_reset_hash>
-					<cms:if user_pw_reset_time gt "<cms:sub "<cms:date format='U'/>" '3600'/>">
-						<cms:embed 'user-password-temporary.php'/>
-					<cms:else/>
-						<div class="alert">This password reset link has expired. Please request new instructions.</div>
-					</cms:if>
-				<cms:else/>
+				<cms:if "<cms:not user_pw_reset_hash/>" || get_hash != user_pw_reset_hash>
 					<cms:show reset_fail_msg/>
+				<cms:else/>
+					<cms:if user_pw_reset_time lt "<cms:sub "<cms:date format='U'/>" '3600'/>">
+						<div class="alert">This password reset link has expired. Please request new instructions.</div>
+					<cms:else/>
+						<cms:embed 'user-password-temporary.php'/>
+					</cms:if>
 				</cms:if>
 
 				<cms:no_results>
 					<cms:show reset_fail_msg/>
 				</cms:no_results>
 			</cms:pages>
-		<cms:else/>
-			<cms:show reset_fail_msg/>
 		</cms:if>
 	<cms:else/>
 		<cms:form anchor='0' action=k_template_link method='post' name='reset'>

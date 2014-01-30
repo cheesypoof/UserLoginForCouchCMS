@@ -35,7 +35,9 @@ if ( defined( 'AUTHENTICATE' ) ) {
 	<cms:if check_authentication>
 		<cms:if cookie_remember_id && cookie_remember_token>
 			<cms:pages id=cookie_remember_id limit='1' masterpage='users.php'>
-				<cms:if user_remember_token == cookie_remember_token>
+				<cms:if user_remember_token != cookie_remember_token>
+					<cms:delete_cookie 'remember'/>
+				<cms:else/>
 					<cms:set_session name='user_id' value=k_page_id/>
 
 					<cms:embed 'user-init-login.php'/>
@@ -43,8 +45,6 @@ if ( defined( 'AUTHENTICATE' ) ) {
 					<cms:embed 'user-init-set.php'/>
 
 					<cms:set authenticated='1' scope='global'/>
-				<cms:else/>
-					<cms:delete_cookie 'remember'/>
 				</cms:if>
 
 				<cms:no_results>

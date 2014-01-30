@@ -17,7 +17,7 @@
 	<cms:pages id=my_user_id limit='1' masterpage='users.php'>
 		<h2>Information</h2>
 
-		<cms:form anchor='0' action="<cms:link 'account.php'/>" masterpage='users.php' method='post' mode='edit' name='information' page_id=my_user_id>
+		<cms:form anchor='0' action="<cms:link 'account.php'/>" masterpage='users.php' method='post' mode='edit' name='information' page_id=k_page_id>
 			<cms:if k_success>
 				<cms:embed 'user-edit-information.php'/>
 			<cms:else/>
@@ -53,7 +53,9 @@
 			<cms:if k_success>
 				<cms:embed 'user-password-verify.php'/>
 
-				<cms:if password_verified>
+				<cms:if "<cms:not password_verified/>">
+					<div class="alert alert-error">Incorrect password. Please try again.</div>
+				<cms:else/>
 					<cms:embed 'user-exists.php'/>
 
 					<cms:if continue_user_name && continue_email>
@@ -67,8 +69,6 @@
 							<div class="alert">You didn't enter any new account settings.</div>
 						</cms:if>
 					</cms:if>
-				<cms:else/>
-					<div class="alert alert-error">Incorrect password. Please try again.</div>
 				</cms:if>
 			<cms:else/>
 				<cms:if k_error>
@@ -131,20 +131,24 @@
 		</cms:form>
 	</cms:pages>
 <cms:else/>
-	<cms:if get_activate>
+	<cms:if "<cms:not get_activate/>">
+		<cms:redirect k_site_link/>
+	<cms:else/>
 		<cms:embed 'user-action.php'/>
 
 		<cms:set activation_fail_msg='<div class="alert alert-error">Account activation failed. Please check the URL for typos and contact us if this error persists.</div>'/>
 
-		<cms:if valid_id>
+		<cms:if "<cms:not valid_id/>">
+			<cms:show activation_fail_msg/>
+		<cms:else/>
 			<cms:pages id=get_id limit='1' masterpage='users.php'>
-				<cms:if get_hash == user_activation_hash>
+				<cms:if "<cms:not user_active/>" && get_hash == user_activation_hash>
 					<cms:embed 'user-activate.php'/>
 				<cms:else/>
-					<cms:if "<cms:not_empty user_activation_hash/>">
-						<cms:show activation_fail_msg/>
+					<cms:if user_active>
+						<div class="alert alert-info">This account has already been successfully activated!</div>
 					<cms:else/>
-						<div class="alert alert-info">This account has already been successfully activated! Please try log in and let us know if you experience any difficulties.</div>
+						<cms:show activation_fail_msg/>
 					</cms:if>
 				</cms:if>
 
@@ -152,11 +156,7 @@
 					<cms:show activation_fail_msg/>
 				</cms:no_results>
 			</cms:pages>
-		<cms:else/>
-			<cms:show activation_fail_msg/>
 		</cms:if>
-	<cms:else/>
-		<cms:redirect k_site_link/>
 	</cms:if>
 </cms:if>
 
