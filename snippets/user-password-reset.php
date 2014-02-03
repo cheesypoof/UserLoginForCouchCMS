@@ -1,7 +1,7 @@
 <cms:php>
 global $CTX;
 
-$CTX->set( 'password_reset_hash', sha1( uniqid( mt_rand(), true ) ), 'local' );
+$CTX->set( 'password_reset_hash', sha1( uniqid( mt_rand(), true ) ) );
 </cms:php>
 
 <cms:db_persist

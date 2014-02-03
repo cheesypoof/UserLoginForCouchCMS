@@ -4,9 +4,9 @@ global $CTX, $FUNCS;
 $user_activation_hash = sha1( uniqid( mt_rand(), true ) );
 $user_password_hash = password_hash( $_POST['password'], PASSWORD_DEFAULT, array( 'cost' => USER_PASSWORD_HASH_COST_FACTOR ) );
 
-$CTX->set( 'activation_hash', $user_activation_hash, 'local' );
-$CTX->set( 'ip_address', trim( $FUNCS->cleanXSS( strip_tags( $_SERVER['REMOTE_ADDR'] ) ) ), 'local' );
-$CTX->set( 'password_hash', $user_password_hash, 'local' );
+$CTX->set( 'activation_hash', $user_activation_hash );
+$CTX->set( 'ip_address', trim( $FUNCS->cleanXSS( strip_tags( $_SERVER['REMOTE_ADDR'] ) ) ) );
+$CTX->set( 'password_hash', $user_password_hash );
 </cms:php>
 
 <cms:db_persist

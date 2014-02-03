@@ -2,18 +2,18 @@
 global $CTX, $FUNCS;
 
 if ( defined( 'AUTHENTICATE' ) ) {
-	$CTX->set( 'check_authentication', '1', 'local' );
+	$CTX->set( 'check_authentication', '1' );
 
 	if ( AUTHENTICATE == 'session' ) {
-		$CTX->set( 'authenticated', '1', 'local' );
+		$CTX->set( 'authenticated', '1' );
 	} else {
 		list( $user_id, $token, $hash ) = explode( ':', $_COOKIE['remember'] );
 
 		if ( $FUNCS->is_non_zero_natural( $user_id ) ) {
-			$CTX->set( 'cookie_remember_id', $user_id, 'local' );
+			$CTX->set( 'cookie_remember_id', $user_id );
 
 			if ( !empty( $token ) && $hash == hash( 'sha256', $user_id . ':' . $token . USER_REMEMBER_COOKIE_SECRET_KEY ) )
-				$CTX->set( 'cookie_remember_token', $token, 'local' );
+				$CTX->set( 'cookie_remember_token', $token );
 		}
 	}
 }

@@ -4,8 +4,8 @@ global $CTX;
 $user_temporary_password = sha1( uniqid( mt_rand(), true ) );
 $user_temporary_password_hash = password_hash( $user_temporary_password, PASSWORD_DEFAULT, array( 'cost' => USER_PASSWORD_HASH_COST_FACTOR ) );
 
-$CTX->set( 'temporary_password', $user_temporary_password, 'local' );
-$CTX->set( 'temporary_password_hash', $user_temporary_password_hash, 'local' );
+$CTX->set( 'temporary_password', $user_temporary_password );
+$CTX->set( 'temporary_password_hash', $user_temporary_password_hash );
 </cms:php>
 
 <cms:db_persist
