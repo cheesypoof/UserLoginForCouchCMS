@@ -42,7 +42,7 @@ require_once( K_COUCH_DIR . 'addons/data-bound-form/data-bound-form.php' );
 <cms:embed 'user-init.php'/>
 ```
 
-- You can then check the visitor's login status using the `authenticated` variable:
+- You can then check a visitor's login status using the `authenticated` variable:
 
 ```PHP
 <cms:if authenticated>
@@ -52,13 +52,13 @@ require_once( K_COUCH_DIR . 'addons/data-bound-form/data-bound-form.php' );
 </cms:if>
 ```
 
-- If the visitor is logged in, a number of additional variables are provided:
-	- `my_user_id`
-	- `my_user_name`
-	- `my_user_email`
-	- `my_user_fname`
-	- `my_user_lname`
-	- `my_user_profile`
+- If a visitor is logged in, a number of additional variables are provided:
+	- `my_user_id` - ID of user's cloned page
+	- `my_user_profile` - Link to user's cloned page
+	- `my_user_name` - Username
+	- `my_user_email` - Email Address
+	- `my_user_fname` - First Name (*Optional*)
+	- `my_user_lname` - Last Name (*Optional*)
 
 
 ## Contributing
