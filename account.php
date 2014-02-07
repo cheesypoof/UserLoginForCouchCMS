@@ -83,10 +83,10 @@
 			</cms:if>
 
 			<div><label for="password">Current Password (Required)</label></div>
-			<div><input autocomplete="off" id="password" maxlength="64" name="password" pattern=".{6,64}" required="required" title="6 to 64 characters" type="password" value=""/></div>
+			<div><input autocomplete="off" id="password" maxlength="64" name="password" pattern=".{8,64}" required="required" title="8 to 64 characters" type="password" value=""/></div>
 
 			<cms:hide>
-				<cms:input label='Current Password' name='password' required='1' type='password' validator='min_len=6 | max_len=64'/>
+				<cms:input label='Current Password' name='password' required='1' type='password' val_separator=':' validator='min_len:8 | max_len:64 | regex:/^(?=.*[A-Z])(?=.*\d)([0-9a-zA-Z]+)$/' validator_msg='regex:Must contain at least one number and both lower and upper case letters.'/>
 			</cms:hide>
 
 			<br/>
@@ -110,19 +110,19 @@
 			<br/>
 
 			<div><label for="new_password">New Password</label></div>
-			<div><input autocomplete="off" class="span6" id="new_password" maxlength="64" name="new_password" type="password" value=""/></div>
+			<div><input autocomplete="off" id="new_password" maxlength="64" name="new_password" type="password" value=""/></div>
 
 			<cms:hide>
-				<cms:input label='New Password' name='new_password' type='password' validator='min_len=6 | max_len=64 | matches_field=new_password_repeat'/>
+				<cms:input label='New Password' name='new_password' type='password' val_separator=':' validator='min_len:8 | max_len:64 | regex:/^(?=.*[A-Z])(?=.*\d)([0-9a-zA-Z]+)$/ | matches_field:new_password_repeat' validator_msg='regex:Must contain at least one number and both lower and upper case letters.'/>
 			</cms:hide>
 
 			<br/>
 
 			<div><label for="new_password_repeat">Repeat New Password</label></div>
-			<div><input autocomplete="off" class="span6" id="new_password_repeat" maxlength="64" name="new_password_repeat" type="password" value=""/></div>
+			<div><input autocomplete="off" id="new_password_repeat" maxlength="64" name="new_password_repeat" type="password" value=""/></div>
 
 			<cms:hide>
-				<cms:input label='Repeat New Password' name='new_password_repeat' type='password' validator='min_len=6 | max_len=64 | matches_field=new_password'/>
+				<cms:input label='Repeat New Password' name='new_password_repeat' type='password'/>
 			</cms:hide>
 
 			<br/>

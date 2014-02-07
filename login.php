@@ -64,10 +64,10 @@
 		<br/>
 
 		<div><label for="password">Password</label></div>
-		<div><input id="password" maxlength="64" name="password" pattern=".{6,64}" required="required" title="6 to 64 characters" type="password" value=""/></div>
+		<div><input id="password" maxlength="64" name="password" pattern=".{8,64}" required="required" title="8 to 64 characters" type="password" value=""/></div>
 
 		<cms:hide>
-			<cms:input label='Password' name='password' required='1' type='password' validator='min_len=6 | max_len=64'/>
+			<cms:input label='Password' name='password' required='1' type='password' val_separator=':' validator='min_len:8 | max_len:64 | regex:/^(?=.*[A-Z])(?=.*\d)([0-9a-zA-Z]+)$/' validator_msg='regex:Must contain at least one number and both lower and upper case letters.'/>
 		</cms:hide>
 
 		<br/>
