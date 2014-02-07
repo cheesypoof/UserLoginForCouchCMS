@@ -11,7 +11,7 @@ if ( !defined( 'K_ADMIN' ) ) {
 
 	// Password hashing strength
 	// Leave this alone
-	define( 'USER_PASSWORD_HASH_COST_FACTOR', '10' );
+	define( 'USER_PASSWORD_HASH_COST_FACTOR', 10 );
 
 	// Life of remember cookies
 	// 2 weeks in seconds
