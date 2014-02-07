@@ -16,7 +16,7 @@
 	<cms:if get_reset>
 		<cms:embed 'user-action.php'/>
 
-		<cms:set reset_fail_msg='<div class="alert alert-error">Password reset failed. Please check the URL for typos and contact us if this error persists.</div>'/>
+		<cms:set reset_fail_msg='<div class="alert alert-error">Password reset failed. Please check the URL for typos.</div>'/>
 
 		<cms:if "<cms:not valid_id/>">
 			<cms:show reset_fail_msg/>

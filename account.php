@@ -136,7 +136,7 @@
 	<cms:else/>
 		<cms:embed 'user-action.php'/>
 
-		<cms:set activation_fail_msg='<div class="alert alert-error">Account activation failed. Please check the URL for typos and contact us if this error persists.</div>'/>
+		<cms:set activation_fail_msg='<div class="alert alert-error">Account activation failed. Please check the URL for typos.</div>'/>
 
 		<cms:if "<cms:not valid_id/>">
 			<cms:show activation_fail_msg/>
