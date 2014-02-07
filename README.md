@@ -38,13 +38,13 @@ require_once( K_COUCH_DIR . 'addons/data-bound-form/data-bound-form.php' );
 ## Usage
 - Embed the `user-init.php` snippet file at the start of each template you wish to enable user functionality:
 
-```
+```PHP
 <cms:embed 'user-init.php'/>
 ```
 
-- You can then check the visitor's login status using the `authenticated` variable and display different content:
+- You can then check the visitor's login status using the `authenticated` variable:
 
-```
+```PHP
 <cms:if authenticated>
 	You are logged in!
 <cms:else/>
@@ -52,13 +52,13 @@ require_once( K_COUCH_DIR . 'addons/data-bound-form/data-bound-form.php' );
 </cms:if>
 ```
 
-- If the visitor is logged in, a number of additional variables are provided.
-- - `my_user_id`
-- - `my_user_name`
-- - `my_user_email`
-- - `my_user_fname`
-- - `my_user_lname`
-- - `my_user_profile`
+- If the visitor is logged in, a number of additional variables are provided:
+	- `my_user_id`
+	- `my_user_name`
+	- `my_user_email`
+	- `my_user_fname`
+	- `my_user_lname`
+	- `my_user_profile`
 
 
 ## Contributing
