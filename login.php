@@ -11,7 +11,7 @@
 <cms:if authenticated>
 	<div class="alert alert-info">You are currently logged in.</div>
 <cms:else/>
-	<cms:form anchor='0' action=k_template_link method='post' name='login'>
+	<cms:form action=k_template_link anchor='0' method='post' name='login'>
 		<cms:if k_success>
 			<cms:set login_fail_msg='<div class="alert alert-error">Incorrect login credentials. Please try again.</div>'/>
 

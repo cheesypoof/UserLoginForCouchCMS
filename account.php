@@ -17,7 +17,7 @@
 	<cms:pages id=my_user_id limit='1' masterpage='users.php'>
 		<h2>Information</h2>
 
-		<cms:form anchor='0' action="<cms:link 'account.php'/>" masterpage='users.php' method='post' mode='edit' name='information' page_id=k_page_id>
+		<cms:form action="<cms:link 'account.php'/>" anchor='0' masterpage='users.php' method='post' mode='edit' name='information' page_id=k_page_id>
 			<cms:if k_success>
 				<cms:embed 'user-edit-information.php'/>
 			<cms:else/>
@@ -49,7 +49,7 @@
 
 		<h2>Account</h2>
 
-		<cms:form anchor='0' action="<cms:link 'account.php'/>" method='post' name='account'>
+		<cms:form action="<cms:link 'account.php'/>" anchor='0' method='post' name='account'>
 			<cms:if k_success>
 				<cms:embed 'user-password-verify.php'/>
 

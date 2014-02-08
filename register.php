@@ -11,7 +11,7 @@
 <cms:if authenticated>
 	<div class="alert alert-info">You are currently logged in.</div>
 <cms:else/>
-	<cms:form anchor='0' action=k_template_link anchor='0' masterpage='users.php' method='post' mode='create' name='register'>
+	<cms:form action=k_template_link anchor='0' masterpage='users.php' method='post' mode='create' name='register'>
 		<cms:if k_submitted>
 			<cms:set post_user_email="<cms:gpc method='post' var='f_user_email'/>"/>
 			<cms:set post_user_name="<cms:gpc method='post' var='f_user_name'/>"/>
