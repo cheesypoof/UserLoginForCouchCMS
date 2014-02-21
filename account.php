@@ -132,7 +132,7 @@
 	</cms:pages>
 <cms:else/>
 	<cms:if "<cms:not get_activate/>">
-		<cms:redirect k_site_link/>
+		<cms:redirect "<cms:link 'login.php'/>"/>
 	<cms:else/>
 		<cms:embed 'user-action.php'/>
 
