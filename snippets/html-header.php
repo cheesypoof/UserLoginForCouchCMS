@@ -5,6 +5,8 @@
 		<cms:else/>
 			<cms:show my_user_name/>
 		</cms:if>
+
+		<cms:show my_user_avatar/>
 	<cms:else/>
 		stranger
 	</cms:if>

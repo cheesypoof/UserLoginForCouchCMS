@@ -8,6 +8,8 @@
 		<cms:editable group='user_info_group' label='First Name' name='user_fname' order='15' type='text'/>
 		<cms:editable group='user_info_group' label='Last Name' name='user_lname' order='20' type='text'/>
 
+		<cms:editable allowed_ext='gif, jpg, png' crop='1' group='user_info_group' height='256' label='Avatar' max_size='1024' name='user_avatar' order='25' show_preview='1' thumb_height='64' thumb_width='64' type='securefile' use_thumb_for_preview='0' width='256'/>
+
 	<cms:editable desc='Don\'t Edit' label='System' name='user_system_group' order='10' type='group'/>
 		<cms:editable group='user_system_group' label='Active' name='user_active' opt_selected='0' opt_values='Yes=1 | | No=0' order='5' type='radio'/>
 		<cms:editable group='user_system_group' label='Activation Hash' name='user_activation_hash' order='10' type='text'/>
@@ -37,6 +39,20 @@
 	<h2><cms:show user_name/></h2>
 
 	<ul>
+		<cms:show_securefile 'user_avatar'>
+			<cms:if file_is_image>
+				<cms:set current_user_avatar="<img src=\"<cms:cloak_url file_id/>\"/>" scope='global'/>
+			</cms:if>
+		</cms:show_securefile>
+
+		<li>
+			<cms:if current_user_avatar>
+				<cms:show current_user_avatar/>
+			<cms:else/>
+				<cms:gravatar email=user_email size='256'/>
+			</cms:if>
+		</li>
+
 		<li><strong>Registered:</strong> <cms:date k_page_date format='F j, Y'/></li>
 
 		<li><strong>Email Address:</strong> <cms:show user_email/></li>
@@ -54,6 +70,20 @@
 		<h2><a href="<cms:show k_page_link/>"><cms:show user_name/></a></h2>
 
 		<ul>
+			<cms:show_securefile 'user_avatar'>
+				<cms:if file_is_image>
+					<cms:set current_user_avatar="<img src=\"<cms:cloak_url link=file_id thumbnail='1'/>\"/>" scope='global'/>
+				</cms:if>
+			</cms:show_securefile>
+
+			<li>
+				<cms:if current_user_avatar>
+					<cms:show current_user_avatar/>
+				<cms:else/>
+					<cms:gravatar email=user_email size='64'/>
+				</cms:if>
+			</li>
+
 			<li><strong>Registered:</strong> <cms:date k_page_date format='F j, Y'/></li>
 
 			<li><strong>Email Address:</strong> <cms:show user_email/></li>

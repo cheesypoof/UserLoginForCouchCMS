@@ -17,7 +17,7 @@
 	<cms:pages id=my_user_id limit='1' masterpage='users.php'>
 		<h2>Information</h2>
 
-		<cms:form action="<cms:link 'account.php'/>" anchor='0' masterpage='users.php' method='post' mode='edit' name='information' page_id=k_page_id>
+		<cms:form action="<cms:link 'account.php'/>" anchor='0' enctype='multipart/form-data' masterpage='users.php' method='post' mode='edit' name='information' page_id=k_page_id>
 			<cms:if k_success>
 				<cms:embed 'user-edit-information.php'/>
 			<cms:else/>
@@ -39,6 +39,11 @@
 
 			<div><label for="f_user_lname">Last Name</label></div>
 			<div><cms:input name='user_lname' type='bound'/></div>
+
+			<br/>
+
+			<div><label for="f_user_avatar">Avatar</label></div>
+			<div><cms:input name='user_avatar' type='bound'/></div>
 
 			<br/>
 
