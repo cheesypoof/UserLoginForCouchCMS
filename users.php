@@ -79,6 +79,8 @@
 			<li>
 				<cms:if current_user_avatar>
 					<cms:show current_user_avatar/>
+
+					<cms:set current_user_avatar='' scope='global'/>
 				<cms:else/>
 					<cms:gravatar email=user_email size='64'/>
 				</cms:if>
