@@ -12,6 +12,7 @@ Created by [Increment Web Services](http://incrementwebservices.com/) for use in
 - User Profiles
 - User Listing
 - Account Settings
+- Avatar (*[Gravatar](http://gravatar.com/) Fallback*)
 - Field Customization
 - Login Throttling (*Brute Force Protection*)
 - Secure Password Hashing (*[Password Compatibility Library](https://github.com/ircmaxell/password_compat)*)
@@ -59,6 +60,7 @@ require_once( K_COUCH_DIR . 'addons/data-bound-form/data-bound-form.php' );
 	- `my_user_email` - Email Address
 	- `my_user_fname` - First Name (*Optional*)
 	- `my_user_lname` - Last Name (*Optional*)
+	- `my_user_avatar` - Avatar Image
 
 
 ## Contributing
