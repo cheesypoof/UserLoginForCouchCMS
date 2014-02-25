@@ -10,7 +10,7 @@ Created by [Increment Web Services](http://incrementwebservices.com/) for use in
 - Log Out
 - Reset/Forgot Password
 - User Profiles
-- User Avatar (*[Gravatar](http://gravatar.com/) Fallback*)
+- User Avatars (*[Gravatar](http://gravatar.com/) Fallback*)
 - User Listing
 - Account Settings
 - Field Customization
