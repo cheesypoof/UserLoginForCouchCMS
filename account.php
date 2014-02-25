@@ -14,7 +14,7 @@
 		<cms:embed 'user-logout.php'/>
 	</cms:if>
 
-	<cms:pages id=my_user_id limit='1' masterpage='users.php'>
+	<cms:pages id=my_user_id limit='1' masterpage='users.php' show_future_entries='1'>
 		<h2>Information</h2>
 
 		<cms:form action="<cms:link 'account.php'/>" anchor='0' enctype='multipart/form-data' masterpage='users.php' method='post' mode='edit' name='information' page_id=k_page_id>
@@ -146,7 +146,7 @@
 		<cms:if "<cms:not valid_id/>">
 			<cms:show activation_fail_msg/>
 		<cms:else/>
-			<cms:pages id=get_id limit='1' masterpage='users.php'>
+			<cms:pages id=get_id limit='1' masterpage='users.php' show_future_entries='1'>
 				<cms:if "<cms:not user_active/>" && get_hash == user_activation_hash>
 					<cms:embed 'user-activate.php'/>
 				<cms:else/>

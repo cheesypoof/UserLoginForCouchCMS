@@ -21,12 +21,12 @@
 			<cms:if "<cms:not "<cms:gpc method='post' var='agree'/>"/>">
 				<div class="alert">You must agree to our Terms and Privacy Policy to continue.</div>
 			<cms:else/>
-				<cms:set exists_user_name="<cms:pages count_only='1' custom_field="user_name==<cms:show post_user_name/>" masterpage='users.php'/>"/>
+				<cms:set exists_user_name="<cms:pages count_only='1' custom_field="user_name==<cms:show post_user_name/>" masterpage='users.php' show_future_entries='1'/>"/>
 
 				<cms:if exists_user_name gt '0'>
 					<div class="alert">An account with that username already exists.</div>
 				<cms:else/>
-					<cms:set exists_user_email="<cms:pages count_only='1' custom_field="user_email==<cms:show post_user_email/>" masterpage='users.php'/>"/>
+					<cms:set exists_user_email="<cms:pages count_only='1' custom_field="user_email==<cms:show post_user_email/>" masterpage='users.php' show_future_entries='1'/>"/>
 
 					<cms:if exists_user_email gt '0'>
 						<div class="alert">An account with that email address already exists.</div>

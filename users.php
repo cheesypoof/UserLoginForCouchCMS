@@ -66,7 +66,7 @@
 		</cms:if>
 	</ul>
 <cms:else/>
-	<cms:pages custom_field='user_active==1'>
+	<cms:pages custom_field='user_active==1' show_future_entries='1'>
 		<h2><a href="<cms:show k_page_link/>"><cms:show user_name/></a></h2>
 
 		<ul>

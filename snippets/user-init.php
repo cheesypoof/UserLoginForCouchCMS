@@ -20,7 +20,7 @@ if ( defined( 'AUTHENTICATE' ) ) {
 </cms:php>
 
 <cms:if authenticated>
-	<cms:pages id="<cms:get_session 'user_id'/>" limit='1' masterpage='users.php'>
+	<cms:pages id="<cms:get_session 'user_id'/>" limit='1' masterpage='users.php' show_future_entries='1'>
 		<cms:embed 'user-init-set.php'/>
 
 		<cms:no_results>
@@ -34,7 +34,7 @@ if ( defined( 'AUTHENTICATE' ) ) {
 <cms:else/>
 	<cms:if check_authentication>
 		<cms:if cookie_remember_id && cookie_remember_token>
-			<cms:pages id=cookie_remember_id limit='1' masterpage='users.php'>
+			<cms:pages id=cookie_remember_id limit='1' masterpage='users.php' show_future_entries='1'>
 				<cms:if user_remember_token != cookie_remember_token>
 					<cms:delete_cookie 'remember'/>
 				<cms:else/>

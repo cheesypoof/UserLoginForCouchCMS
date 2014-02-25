@@ -21,7 +21,7 @@
 		<cms:if "<cms:not valid_id/>">
 			<cms:show reset_fail_msg/>
 		<cms:else/>
-			<cms:pages id=get_id limit='1' masterpage='users.php'>
+			<cms:pages id=get_id limit='1' masterpage='users.php' show_future_entries='1'>
 				<cms:if "<cms:not user_pw_reset_hash/>" || get_hash != user_pw_reset_hash>
 					<cms:show reset_fail_msg/>
 				<cms:else/>
@@ -76,7 +76,7 @@
 	<cms:else/>
 		<cms:form action=k_template_link anchor='0' method='post' name='reset'>
 			<cms:if k_success>
-				<cms:pages custom_field="user_name==<cms:show frm_user_name/>" limit='1' masterpage='users.php'>
+				<cms:pages custom_field="user_name==<cms:show frm_user_name/>" limit='1' masterpage='users.php' show_future_entries='1'>
 					<cms:embed 'user-password-reset.php'/>
 
 					<cms:no_results>

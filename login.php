@@ -15,7 +15,7 @@
 		<cms:if k_success>
 			<cms:set login_fail_msg='<div class="alert alert-error">Incorrect login credentials. Please try again.</div>'/>
 
-			<cms:pages custom_field="user_name==<cms:show frm_user_name/>" limit='1' masterpage='users.php'>
+			<cms:pages custom_field="user_name==<cms:show frm_user_name/>" limit='1' masterpage='users.php' show_future_entries='1'>
 				<cms:if user_failed_logins ge '3' && user_last_failed_login_time gt "<cms:sub "<cms:date format='U'/>" '20'/>">
 					<div class="alert">You have entered incorrect login credentials 3 or more times. Please wait 20 seconds to try again.</div>
 				<cms:else/>
