@@ -77,7 +77,11 @@
 		<cms:form action=k_template_link anchor='0' method='post' name='reset'>
 			<cms:if k_success>
 				<cms:pages custom_field="user_name==<cms:show frm_user_name/>" limit='1' masterpage='users.php' show_future_entries='1'>
-					<cms:embed 'user-password-reset.php'/>
+					<cms:if user_pw_reset_time gt "<cms:sub "<cms:date format='U'/>" '300'/>">
+						<div class="alert">Please wait a few minutes before requesting new instructions.</div>
+					<cms:else/>
+						<cms:embed 'user-password-reset.php'/>
+					</cms:if>
 
 					<cms:no_results>
 						<div class="alert alert-error">We have no record of that username.</div>
