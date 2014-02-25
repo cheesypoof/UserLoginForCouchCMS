@@ -4,7 +4,7 @@
 
 <cms:embed 'user-init.php'/>
 
-<cms:set get_activate="<cms:gpc method='get' var='activate'/>"/>
+<cms:set get_hash="<cms:gpc method='get' var='hash'/>"/>
 <cms:set get_logout="<cms:gpc method='get' var='logout'/>"/>
 
 <cms:embed 'html-header.php'/>
@@ -136,7 +136,7 @@
 		</cms:form>
 	</cms:pages>
 <cms:else/>
-	<cms:if "<cms:not get_activate/>">
+	<cms:if "<cms:not get_hash/>">
 		<cms:redirect "<cms:link 'login.php'/>"/>
 	<cms:else/>
 		<cms:embed 'user-action.php'/>

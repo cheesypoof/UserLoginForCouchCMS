@@ -4,7 +4,7 @@
 
 <cms:embed 'user-init.php'/>
 
-<cms:set get_reset="<cms:gpc method='get' var='reset'/>"/>
+<cms:set get_hash="<cms:gpc method='get' var='hash'/>"/>
 
 <cms:embed 'html-header.php'/>
 
@@ -13,7 +13,7 @@
 <cms:if authenticated>
 	<div class="alert alert-info">You are currently logged in.</div>
 <cms:else/>
-	<cms:if get_reset>
+	<cms:if get_hash>
 		<cms:embed 'user-action.php'/>
 
 		<cms:set reset_fail_msg='<div class="alert alert-error">Password reset failed. Please check the URL for typos.</div>'/>
@@ -28,7 +28,7 @@
 					<cms:if user_pw_reset_time lt "<cms:sub "<cms:date format='U'/>" '1800'/>">
 						<div class="alert">This password reset link has expired. Please request new instructions.</div>
 					<cms:else/>
-						<cms:form action="<cms:concat "<cms:link 'reset.php'/>" '?reset=1&amp;id=' k_page_id '&amp;hash=' user_pw_reset_hash/>" anchor='0' method='post' name='change'>
+						<cms:form action="<cms:concat "<cms:link 'reset.php'/>" '?id=' k_page_id '&amp;hash=' user_pw_reset_hash/>" anchor='0' method='post' name='change'>
 							<cms:if k_success>
 								<cms:embed 'user-password-change.php'/>
 							<cms:else/>
