@@ -38,8 +38,6 @@ if ( defined( 'AUTHENTICATE' ) ) {
 				<cms:if user_remember_token != cookie_remember_token>
 					<cms:delete_cookie 'remember'/>
 				<cms:else/>
-					<cms:set_session name='user_id' value=k_page_id/>
-
 					<cms:embed 'user-init-login.php'/>
 
 					<cms:embed 'user-init-set.php'/>

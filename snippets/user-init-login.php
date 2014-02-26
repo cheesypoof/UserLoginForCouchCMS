@@ -2,6 +2,8 @@
 
 <cms:set_cookie expire=remember_expire name='remember' value=remember_value/>
 
+<cms:set_session name='user_id' value=k_page_id/>
+
 <cms:db_persist
 	_masterpage = 'users.php'
 	_mode = 'edit'
