@@ -15,11 +15,17 @@
 	</cms:if>
 
 	<cms:pages id=my_user_id limit='1' masterpage='users.php' show_future_entries='1'>
+		<cms:embed 'user-csrf.php'/>
+
 		<h2>Information</h2>
 
 		<cms:form action="<cms:link 'account.php'/>" anchor='0' enctype='multipart/form-data' masterpage='users.php' method='post' mode='edit' name='information' page_id=k_page_id>
 			<cms:if k_success>
-				<cms:embed 'user-edit-information.php'/>
+				<cms:if csrf_token != "<cms:gpc method='post' var='csrf_token'/>">
+					<div class="alert alert-error">Unauthorized user action.</div>
+				<cms:else/>
+					<cms:embed 'user-edit-information.php'/>
+				</cms:if>
 			<cms:else/>
 				<cms:if k_error>
 					<div class="alert alert-error">
@@ -47,6 +53,8 @@
 
 			<br/>
 
+			<input name="csrf_token" type="hidden" value="<cms:show csrf_token/>"/>
+
 			<input type="submit" value="Update Information"/>
 		</cms:form>
 
@@ -56,22 +64,26 @@
 
 		<cms:form action="<cms:link 'account.php'/>" anchor='0' method='post' name='account'>
 			<cms:if k_success>
-				<cms:embed 'user-password-verify.php'/>
-
-				<cms:if "<cms:not password_verified/>">
-					<div class="alert alert-error">Incorrect password. Please try again.</div>
+				<cms:if csrf_token != "<cms:gpc method='post' var='csrf_token'/>">
+					<div class="alert alert-error">Unauthorized user action.</div>
 				<cms:else/>
-					<cms:embed 'user-exists.php'/>
+					<cms:embed 'user-password-verify.php'/>
 
-					<cms:if continue_user_name && continue_email>
-						<cms:if "<cms:not_empty frm_new_password/>" && "<cms:not_empty frm_new_password_repeat/>">
-							<cms:embed 'user-password-new.php'/>
-						</cms:if>
+					<cms:if "<cms:not password_verified/>">
+						<div class="alert alert-error">Incorrect password. Please try again.</div>
+					<cms:else/>
+						<cms:embed 'user-exists.php'/>
 
-						<cms:if new_user_name || new_email || "<cms:not_empty new_password_hash/>">
-							<cms:embed 'user-edit-account.php'/>
-						<cms:else/>
-							<div class="alert">You did not enter any new account settings.</div>
+						<cms:if continue_user_name && continue_email>
+							<cms:if "<cms:not_empty frm_new_password/>" && "<cms:not_empty frm_new_password_repeat/>">
+								<cms:embed 'user-password-new.php'/>
+							</cms:if>
+
+							<cms:if new_user_name || new_email || "<cms:not_empty new_password_hash/>">
+								<cms:embed 'user-edit-account.php'/>
+							<cms:else/>
+								<div class="alert">You did not enter any new account settings.</div>
+							</cms:if>
 						</cms:if>
 					</cms:if>
 				</cms:if>
@@ -131,6 +143,8 @@
 			</cms:hide>
 
 			<br/>
+
+			<input name="csrf_token" type="hidden" value="<cms:show csrf_token/>"/>
 
 			<input type="submit" value="Update Account"/>
 		</cms:form>
