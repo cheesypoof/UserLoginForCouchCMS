@@ -19,12 +19,10 @@
 		<cms:editable group='user_system_group' label='Password Reset Hash' name='user_pw_reset_hash' order='20' type='text'/>
 		<cms:editable group='user_system_group' label='Password Reset Time' name='user_pw_reset_time' order='25' search_type='integer' type='text' validator='non_negative_integer'>0</cms:editable>
 
-		<cms:editable group='user_system_group' label='Remember Token' name='user_remember_token' order='30' type='text'/>
+		<cms:editable group='user_system_group' label='Failed Logins' name='user_failed_logins' order='30' search_type='integer' type='text' validator='non_negative_integer'>0</cms:editable>
+		<cms:editable group='user_system_group' label='Last Failed Login Time' name='user_last_failed_login_time' order='35' search_type='integer' type='text' validator='non_negative_integer'>0</cms:editable>
 
-		<cms:editable group='user_system_group' label='Failed Logins' name='user_failed_logins' order='35' search_type='integer' type='text' validator='non_negative_integer'>0</cms:editable>
-		<cms:editable group='user_system_group' label='Last Failed Login Time' name='user_last_failed_login_time' order='40' search_type='integer' type='text' validator='non_negative_integer'>0</cms:editable>
-
-		<cms:editable group='user_system_group' label='Registration IP Address' name='user_registration_ip' order='45' type='text'/>
+		<cms:editable group='user_system_group' label='Registration IP Address' name='user_registration_ip' order='40' type='text'/>
 </cms:template>
 
 <cms:embed 'user-init.php'/>

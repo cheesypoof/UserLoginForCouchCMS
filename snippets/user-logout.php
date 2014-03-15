@@ -1,13 +1,3 @@
-<cms:db_persist
-	_masterpage = 'users.php'
-	_mode = 'edit'
-	_page_id = "<cms:get_session 'user_id'/>"
-
-	user_remember_token = ''
-/>
-
-<cms:delete_cookie 'remember'/>
-
-<cms:delete_session 'user_id'/>
+<cms:delete_cookie 'couchcms_userauth'/>
 
 <cms:redirect "<cms:link 'login.php'/>"/>

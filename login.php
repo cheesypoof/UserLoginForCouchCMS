@@ -35,13 +35,13 @@
 						<cms:if "<cms:not user_active/>">
 							<div class="alert">This account has not been activated. Please check your email inbox for instructions.</div>
 						<cms:else/>
-							<cms:if "<cms:gpc method='post' var='remember'/>">
-								<cms:embed 'user-login-remember.php'/>
-							<cms:else/>
-								<cms:embed 'user-login.php'/>
-							</cms:if>
+							<cms:set user_cookie_remember="<cms:gpc method='post' var='remember'/>"/>
 
-							<cms:redirect "<cms:link 'account.php'/>"/>
+							<cms:embed 'user-login.php'/>
+
+							<cms:if login_success>
+								<cms:redirect "<cms:link 'account.php'/>"/>
+							</cms:if>
 						</cms:if>
 					</cms:if>
 				</cms:if>
@@ -78,7 +78,7 @@
 
 		<br/>
 
-		<div><label for="remember"><input id="remember" name="remember" type="checkbox" value="1"/>Keep me logged in</label></div>
+		<div><label for="remember"><input id="remember" name="remember" type="checkbox" value="1"/>Remember me</label></div>
 
 		<br/>
 
