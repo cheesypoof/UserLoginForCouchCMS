@@ -8,11 +8,11 @@
 
 <cms:embed 'html-header.php'/>
 
-<h2>Reset Password</h2>
-
 <cms:if authenticated>
 	<div class="alert alert-info">You are currently logged in.</div>
 <cms:else/>
+	<h2>Reset Password</h2>
+
 	<cms:if get_act == 'reset'>
 		<cms:embed 'user-action.php'/>
 
