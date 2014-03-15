@@ -76,7 +76,7 @@
 	<cms:else/>
 		<cms:form action=k_template_link anchor='0' method='post' name='reset'>
 			<cms:if k_success>
-				<cms:pages custom_field="user_name==<cms:show frm_user_name/>" limit='1' masterpage='users.php' show_future_entries='1'>
+				<cms:pages custom_field="user_email==<cms:show frm_user_email/>" limit='1' masterpage='users.php' show_future_entries='1'>
 					<cms:if user_pw_reset_time gt "<cms:sub "<cms:date format='U'/>" '300'/>">
 						<div class="alert">Please wait a few minutes before requesting new instructions.</div>
 					<cms:else/>
@@ -84,7 +84,7 @@
 					</cms:if>
 
 					<cms:no_results>
-						<div class="alert alert-error">We have no record of that username.</div>
+						<div class="alert alert-error">We have no record of that email address.</div>
 					</cms:no_results>
 				</cms:pages>
 			<cms:else/>
@@ -100,11 +100,11 @@
 			<cms:if reset_success>
 				<div class="alert alert-success">Please check your email inbox for further instructions.</div>
 			<cms:else/>
-				<div><label for="user_name">Username</label></div>
-				<div><input autofocus="autofocus" id="user_name" maxlength="48" name="user_name" pattern="[a-zA-Z0-9]{3,48}" required="required" title="3 to 48 alphanumeric characters" type="text" value="<cms:gpc method='post' var='user_name'/>"/></div>
+				<div><label for="user_email">Email Address</label></div>
+				<div><input autofocus="autofocus" id="user_email" name="user_email" required="required" type="email" value="<cms:gpc method='post' var='user_email'/>"/></div>
 
 				<cms:hide>
-					<cms:input label='Username' name='user_name' required='1' type='text' validator='alpha_num | min_len=3 | max_len=48'/>
+					<cms:input label='Email Address' name='user_email' required='1' type='text' validator='email'/>
 				</cms:hide>
 
 				<br/>
