@@ -1,6 +1,7 @@
 <cms:no_cache/>
 
 <cms:set get_id="<cms:gpc method='get' var='id'/>"/>
+<cms:set get_hash="<cms:gpc method='get' var='hash'/>"/>
 
 <cms:php>
 global $CTX, $FUNCS;

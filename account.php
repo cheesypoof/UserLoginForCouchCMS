@@ -4,11 +4,11 @@
 
 <cms:embed 'user-init.php'/>
 
-<cms:set get_hash="<cms:gpc method='get' var='hash'/>"/>
-
 <cms:embed 'html-header.php'/>
 
-<cms:if authenticated>
+<cms:if "<cms:not authenticated/>">
+	<cms:redirect "<cms:link 'login.php'/>"/>
+<cms:else/>
 	<cms:pages id=my_user_id limit='1' masterpage='users.php' show_future_entries='1'>
 		<cms:embed 'user-csrf.php'/>
 
@@ -144,34 +144,6 @@
 			<input type="submit" value="Update Account"/>
 		</cms:form>
 	</cms:pages>
-<cms:else/>
-	<cms:if "<cms:not get_hash/>">
-		<cms:redirect "<cms:link 'login.php'/>"/>
-	<cms:else/>
-		<cms:embed 'user-action.php'/>
-
-		<cms:set activation_fail_msg='<div class="alert alert-error">Account activation failed. Please check the URL for typos.</div>'/>
-
-		<cms:if "<cms:not valid_id/>">
-			<cms:show activation_fail_msg/>
-		<cms:else/>
-			<cms:pages id=get_id limit='1' masterpage='users.php' show_future_entries='1'>
-				<cms:if "<cms:not user_active/>" && get_hash == user_activation_hash>
-					<cms:embed 'user-activate.php'/>
-				<cms:else/>
-					<cms:if user_active>
-						<div class="alert alert-info">This account has already been successfully activated!</div>
-					<cms:else/>
-						<cms:show activation_fail_msg/>
-					</cms:if>
-				</cms:if>
-
-				<cms:no_results>
-					<cms:show activation_fail_msg/>
-				</cms:no_results>
-			</cms:pages>
-		</cms:if>
-	</cms:if>
 </cms:if>
 
 <?php COUCH::invoke(); ?>
