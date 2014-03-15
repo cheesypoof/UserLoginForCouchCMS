@@ -8,8 +8,6 @@
 
 <cms:embed 'html-header.php'/>
 
-<h2>Login</h2>
-
 <cms:if authenticated>
 	<cms:if get_act == 'logout'>
 		<cms:embed 'user-logout.php'/>
@@ -17,6 +15,8 @@
 
 	<div class="alert alert-info">You are currently logged in.</div>
 <cms:else/>
+	<h2>Login</h2>
+
 	<cms:form action=k_template_link anchor='0' method='post' name='login'>
 		<cms:if k_success>
 			<cms:set login_fail_msg='<div class="alert alert-error">Incorrect login credentials. Please try again.</div>'/>
