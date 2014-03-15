@@ -2,7 +2,7 @@
 global $CTX, $FUNCS;
 
 $user_activation_hash = sha1( uniqid( mt_rand(), true ) );
-$user_password_hash = password_hash( $_POST['password'], PASSWORD_DEFAULT ) );
+$user_password_hash = password_hash( $_POST['password'], PASSWORD_DEFAULT );
 
 $CTX->set( 'activation_hash', $user_activation_hash );
 $CTX->set( 'ip_address', trim( $FUNCS->cleanXSS( strip_tags( $_SERVER['REMOTE_ADDR'] ) ) ) );
