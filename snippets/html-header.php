@@ -18,7 +18,7 @@
 	<cms:if authenticated>
 		- <a href="<cms:link 'account.php'/>">Account Settings</a>
 		- <a href="<cms:show my_user_profile/>">Profile</a>
-		- <a href="<cms:link 'account.php'/>?logout=1">Log Out</a>
+		- <a href="<cms:link 'login.php'/>?act=logout">Log Out</a>
 	<cms:else/>
 		- <a href="<cms:link 'register.php'/>">Register</a>
 		- <a href="<cms:link 'login.php'/>">Log In</a>

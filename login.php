@@ -4,11 +4,17 @@
 
 <cms:embed 'user-init.php'/>
 
+<cms:set get_act="<cms:gpc method='get' var='act'/>"/>
+
 <cms:embed 'html-header.php'/>
 
 <h2>Login</h2>
 
 <cms:if authenticated>
+	<cms:if get_act == 'logout'>
+		<cms:embed 'user-logout.php'/>
+	</cms:if>
+
 	<div class="alert alert-info">You are currently logged in.</div>
 <cms:else/>
 	<cms:form action=k_template_link anchor='0' method='post' name='login'>

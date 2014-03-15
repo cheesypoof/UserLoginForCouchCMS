@@ -5,15 +5,10 @@
 <cms:embed 'user-init.php'/>
 
 <cms:set get_hash="<cms:gpc method='get' var='hash'/>"/>
-<cms:set get_logout="<cms:gpc method='get' var='logout'/>"/>
 
 <cms:embed 'html-header.php'/>
 
 <cms:if authenticated>
-	<cms:if get_logout>
-		<cms:embed 'user-logout.php'/>
-	</cms:if>
-
 	<cms:pages id=my_user_id limit='1' masterpage='users.php' show_future_entries='1'>
 		<cms:embed 'user-csrf.php'/>
 
