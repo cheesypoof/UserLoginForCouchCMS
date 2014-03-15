@@ -29,7 +29,9 @@
 						</cms:each>
 					</div>
 				<cms:else/>
-					<cms:get_flash 'information_success'/>
+					<cms:if "<cms:get_flash 'information_success'/>">
+						<div class="alert alert-success">Information successfully updated.</div>
+					</cms:if>
 				</cms:if>
 			</cms:if>
 
@@ -90,7 +92,9 @@
 						</cms:each>
 					</div>
 				<cms:else/>
-					<cms:get_flash 'account_success'/>
+					<cms:if "<cms:get_flash 'account_success'/>">
+						<div class="alert alert-success">Account successfully updated.</div>
+					</cms:if>
 				</cms:if>
 			</cms:if>
 

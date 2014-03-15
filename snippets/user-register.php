@@ -24,7 +24,7 @@ $CTX->set( 'password_hash', $user_password_hash );
 	user_registration_ip = ip_address
 >
 	<cms:if k_error>
-		<div class="alert alert-error">An unknown error occured which prevented account creation.</div>
+		<div class="alert alert-error">An unknown error occurred which prevented account creation.</div>
 	<cms:else/>
 		<cms:send_mail from=k_email_from to=post_user_email subject='Account Activation for Website Name'>Hello <cms:show post_user_name/>,
 

@@ -12,6 +12,6 @@
 	user_pw_hash = "<cms:if "<cms:not_empty new_password_hash/>"><cms:show new_password_hash/><cms:else/><cms:show user_pw_hash/></cms:if>"
 />
 
-<cms:set_flash name='account_success' value='<div class="alert alert-success">Account successfully updated.</div>'/>
+<cms:set_flash name='account_success' value='1'/>
 
 <cms:redirect "<cms:link 'account.php'/>"/>

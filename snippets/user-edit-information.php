@@ -2,6 +2,6 @@
 	_invalidate_cache = '1'
 />
 
-<cms:set_flash name='information_success' value='<div class="alert alert-success">Information successfully updated.</div>'/>
+<cms:set_flash name='information_success' value='1'/>
 
 <cms:redirect "<cms:link 'account.php'/>"/>
