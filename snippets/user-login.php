@@ -10,10 +10,10 @@
 		<div class="alert alert-error">An unknown error occurred which prevented authentication.</div>
 	<cms:else/>
 		<cms:if user_cookie_remember>
-			<cms:set user_remember_expire="<cms:add "<cms:php>echo time();</cms:php>" '1209600'/>"/>
+			<cms:set user_remember_expire="<cms:php>echo time() + 1209600;</cms:php>"/>
 			<cms:set user_cookie_expire=user_remember_expire/>
 		<cms:else/>
-			<cms:set user_remember_expire="<cms:add "<cms:php>echo time();</cms:php>" '86400'/>"/>
+			<cms:set user_remember_expire="<cms:php>echo time() + 86400;</cms:php>"/>
 			<cms:set user_cookie_expire='0'/>
 		</cms:if>
 
