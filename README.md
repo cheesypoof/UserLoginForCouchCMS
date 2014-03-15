@@ -29,13 +29,6 @@ require_once( K_COUCH_DIR . 'addons/data-bound-form/data-bound-form.php' );
 ```
 
 
-## Session Security (*php.ini*)
-- `session.cookie_httponly = 1` - Mark session cookies as accessible only through HTTP (*No JavaScript*)
-- `session.use_cookies = 1` - Use cookies to store session identifiers client-side
-- `session.use_only_cookies = 1` - Does not allow passing session identifiers through the URL
-- `session.use_strict_mode = 1` - Does not allow uninitialized sessions (*PHP 5.5.2+*)
-
-
 ## Installation
 - Place the `addons/password-compatibility.php` file in your `couch/addons` folder.
 - Place all of the `snippets/*.php` files in your `couch/snippets` folder.
