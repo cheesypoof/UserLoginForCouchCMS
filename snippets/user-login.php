@@ -27,7 +27,7 @@
 		$CTX->set( 'user_cookie_value', $cookie_value );
 		</cms:php>
 
-		<cms:set_cookie expire=user_cookie_expire name='couchcms_userauth' value=user_cookie_value/>
+		<cms:set_cookie expire=user_cookie_expire name=user_cookie_name value=user_cookie_value/>
 
 		<cms:set login_success='1' scope='global'/>
 	</cms:if>

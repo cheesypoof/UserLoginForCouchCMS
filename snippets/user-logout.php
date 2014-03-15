@@ -1,3 +1,3 @@
-<cms:delete_cookie 'couchcms_userauth'/>
+<cms:delete_cookie user_cookie_name/>
 
 <cms:redirect "<cms:link 'login.php'/>"/>

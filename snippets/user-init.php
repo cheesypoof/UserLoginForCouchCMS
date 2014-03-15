@@ -1,8 +1,11 @@
 <cms:php>
 global $CTX, $FUNCS;
 
-if ( isset( $_COOKIE['couchcms_userauth'] ) ) {
-	list( $id, $expiry, $hash ) = explode( ':', $_COOKIE['couchcms_userauth'] );
+$user_cookie_name = 'couchcms_' . md5( K_SITE_URL . '_user_auth' );
+$CTX->set( 'user_cookie_name', $user_cookie_name );
+
+if ( isset( $_COOKIE[$user_cookie_name] ) ) {
+	list( $id, $expiry, $hash ) = explode( ':', $_COOKIE[$user_cookie_name] );
 
 	if ( $FUNCS->is_non_zero_natural( $expiry ) && time() < $expiry ) {
 		if ( $FUNCS->is_non_zero_natural( $id ) && $hash == hash_hmac( 'sha256', $id . ':' . $expiry, USER_COOKIE_SECRET_KEY ) ) {
@@ -17,8 +20,6 @@ if ( isset( $_COOKIE['couchcms_userauth'] ) ) {
 </cms:php>
 
 <cms:if user_cookie_id>
-	<cms:no_cache/>
-
 	<cms:pages id=user_cookie_id limit='1' masterpage='users.php' show_future_entries='1'>
 		<cms:set authenticated='1' scope='global'/>
 
@@ -40,11 +41,11 @@ if ( isset( $_COOKIE['couchcms_userauth'] ) ) {
 		<cms:set my_user_profile=k_page_link scope='global'/>
 
 		<cms:no_results>
-			<cms:delete_cookie 'couchcms_userauth'/>
+			<cms:delete_cookie user_cookie_name/>
 		</cms:no_results>
 	</cms:pages>
 <cms:else/>
 	<cms:if user_cookie_invalid>
-		<cms:delete_cookie 'couchcms_userauth'/>
+		<cms:delete_cookie user_cookie_name/>
 	</cms:if>
 </cms:if>
