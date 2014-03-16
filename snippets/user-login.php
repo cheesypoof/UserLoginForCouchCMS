@@ -11,7 +11,7 @@
 	<cms:else/>
 		<cms:if user_cookie_remember>
 			<cms:set user_remember_expire="<cms:php>echo time() + 1209600;</cms:php>"/>
-			<cms:set user_cookie_expire=user_remember_expire/>
+			<cms:set user_cookie_expire='1209600'/>
 		<cms:else/>
 			<cms:set user_remember_expire="<cms:php>echo time() + 86400;</cms:php>"/>
 			<cms:set user_cookie_expire='0'/>
