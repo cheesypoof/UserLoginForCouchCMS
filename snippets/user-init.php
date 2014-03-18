@@ -20,7 +20,7 @@ if ( isset( $_COOKIE[$user_cookie_name] ) ) {
 </cms:php>
 
 <cms:if user_cookie_id>
-	<cms:pages id=user_cookie_id limit='1' masterpage='users.php' show_future_entries='1'>
+	<cms:pages custom_field='user_active==1' id=user_cookie_id limit='1' masterpage='users.php' show_future_entries='1'>
 		<cms:set authenticated='1' scope='global'/>
 
 		<cms:show_securefile 'user_avatar'>
