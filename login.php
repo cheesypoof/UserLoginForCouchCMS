@@ -36,7 +36,7 @@
 							<cms:if "<cms:not user_activation_hash/>">
 								<div class="alert alert-error">This account has been deactivated.</div>
 							<cms:else/>
-								<div class="alert">This account has not been activated. Please check your email inbox for instructions.</div>
+								<div class="alert">This account has not been activated. Please check your email (<cms:show user_email/>) inbox for instructions.</div>
 							</cms:if>
 						<cms:else/>
 							<cms:set user_cookie_remember="<cms:gpc method='post' var='remember'/>"/>
