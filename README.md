@@ -1,5 +1,7 @@
 # User Login for CouchCMS
-Created by [Increment Web Services](http://incrementwebservices.com/) for use in your next [CouchCMS](http://www.couchcms.com/) project.
+Created by [Increment Web Services](http://incrementwebservices.com/) for use with [CouchCMS](http://www.couchcms.com/).
+
+**This project is no longer maintained; native functionality has been introduced with the official members addon.**
 
 
 ## Features
