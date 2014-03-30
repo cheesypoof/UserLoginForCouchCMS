@@ -79,7 +79,7 @@
 							<cms:if new_user_name || new_email || "<cms:not_empty new_password_hash/>">
 								<cms:embed 'user-edit-account.php'/>
 							<cms:else/>
-								<div class="alert">You did not enter any new account settings.</div>
+								<div class="alert">You have not entered any new account settings.</div>
 							</cms:if>
 						</cms:if>
 					</cms:if>

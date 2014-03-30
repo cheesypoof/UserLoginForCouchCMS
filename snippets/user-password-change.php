@@ -8,6 +8,14 @@
 	user_pw_hash = new_password_hash
 	user_pw_reset_hash = ''
 	user_pw_reset_time = '0'
-/>
-
-<cms:set change_success='1' scope='global'/>
+>
+	<cms:if k_error>
+		<div class="alert alert-error">
+			<cms:each k_error>
+				<cms:show item/><br/>
+			</cms:each>
+		</div>
+	<cms:else/>
+		<cms:set change_success='1' scope='global'/>
+	</cms:if>
+</cms:db_persist>

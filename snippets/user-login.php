@@ -7,7 +7,11 @@
 	user_last_failed_login_time = '0'
 >
 	<cms:if k_error>
-		<div class="alert alert-error">An unknown error occurred which prevented authentication.</div>
+		<div class="alert alert-error">
+			<cms:each k_error>
+				<cms:show item/><br/>
+			</cms:each>
+		</div>
 	<cms:else/>
 		<cms:if user_cookie_remember>
 			<cms:set user_remember_expire="<cms:php>echo time() + 1209600;</cms:php>"/>
