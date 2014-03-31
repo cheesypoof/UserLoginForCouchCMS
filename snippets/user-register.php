@@ -30,7 +30,7 @@ $CTX->set( 'password_hash', $user_password_hash );
 			</cms:each>
 		</div>
 	<cms:else/>
-		<cms:send_mail from=k_email_from to=post_user_email subject='Account Activation for Website Name'>Hello <cms:show post_user_name/>,
+		<cms:send_mail from=k_email_from subject='Account Activation for Website Name' to=post_user_email>Hello <cms:show post_user_name/>,
 
 Please visit this link to activate your account: <cms:link 'register.php'/>?act=activate&amp;id=<cms:show k_last_insert_id/>&amp;hash=<cms:show activation_hash/>
 

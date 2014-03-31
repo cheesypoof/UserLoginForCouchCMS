@@ -19,7 +19,7 @@ $CTX->set( 'password_reset_hash', sha1( uniqid( mt_rand(), true ) ) );
 			</cms:each>
 		</div>
 	<cms:else/>
-		<cms:send_mail from=k_email_from to=user_email subject='Password Reset for Website Name'>Hello <cms:show user_name/>,
+		<cms:send_mail from=k_email_from subject='Password Reset for Website Name' to=user_email>Hello <cms:show user_name/>,
 
 		Please visit this link to reset your account password: <cms:link 'reset.php'/>?act=reset&amp;id=<cms:show k_page_id/>&amp;hash=<cms:show password_reset_hash/>
 
