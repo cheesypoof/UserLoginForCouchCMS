@@ -11,7 +11,7 @@
 		<cms:editable allowed_ext='gif, jpg, png' crop='1' group='user_info_group' height='256' label='Avatar' max_size='1024' name='user_avatar' order='25' show_preview='1' thumb_height='64' thumb_width='64' type='securefile' use_thumb_for_preview='0' width='256'/>
 
 	<cms:editable desc='Don\'t Edit' label='System' name='user_system_group' order='10' type='group'/>
-		<cms:editable group='user_system_group' label='Active' name='user_active' opt_selected='0' opt_values='Yes=1 | | No=0' order='5' type='radio'/>
+		<cms:editable group='user_system_group' label='Active' name='user_active' opt_selected='0' opt_values='Yes=1 | | No=0' order='5' search_type='integer' type='radio'/>
 		<cms:editable group='user_system_group' label='Activation Hash' name='user_activation_hash' order='10' type='text'/>
 
 		<cms:editable group='user_system_group' label='Password Hash' name='user_pw_hash' order='15' required='1' type='text'/>
