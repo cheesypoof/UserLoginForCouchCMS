@@ -2,7 +2,7 @@
 
 /*
  * User Login for CouchCMS (https://github.com/cheesypoof/UserLoginForCouchCMS)
- * Copyright (c) 2014 Increment Web Services (http://incrementwebservices.com/)
+ * Copyright (c) 2014 Increment Web Services (https://incrementwebservices.com/)
  * Released under the MIT License (https://github.com/cheesypoof/UserLoginForCouchCMS/blob/master/LICENSE)
  */
 
