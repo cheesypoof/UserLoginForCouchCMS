@@ -1,7 +1,7 @@
 # User Login for CouchCMS
 Created by [Increment Web Services](https://incrementwebservices.com/) for use with [CouchCMS](http://www.couchcms.com/).
 
-**This project is no longer maintained; native functionality has been introduced with the official members addon.**
+**This project is no longer maintained; native functionality has been introduced.**
 
 
 ## Features
@@ -65,12 +65,5 @@ require_once( K_COUCH_DIR . 'addons/data-bound-form/data-bound-form.php' );
 	- `my_user_avatar` - Avatar Image
 
 
-## Contributing
-- Search for similar matters before opening a new issue or pull request.
-- Include all relevant details in bug reports.
-- Please adhere to the established coding style when creating patches.
-- Whitespace preferences are available in the [.editorconfig](.editorconfig) file for easy use in common text editors. Read more and download plugins at [EditorConfig](http://editorconfig.org/).
-
-
 ## Copyright and License
-Copyright (c) 2014 [Increment Web Services](https://incrementwebservices.com/). Released under the [MIT License](LICENSE).
+Copyright (c) 2015 [Increment Web Services](https://incrementwebservices.com/). Released under the [MIT License](LICENSE).
