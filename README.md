@@ -1,6 +1,4 @@
-# User Login for CouchCMS
-Created by [Increment Web Services](https://incrementwebservices.com/) for use with [CouchCMS](http://www.couchcms.com/).
-
+# User Login for [CouchCMS](http://www.couchcms.com/)
 **This project is no longer maintained; native functionality has been introduced.**
 
 
@@ -66,4 +64,4 @@ require_once( K_COUCH_DIR . 'addons/data-bound-form/data-bound-form.php' );
 
 
 ## Copyright and License
-Copyright (c) 2015 [Increment Web Services](https://incrementwebservices.com/). Released under the [MIT License](LICENSE).
+Copyright (c) 2015. Released under the [MIT License](LICENSE).
